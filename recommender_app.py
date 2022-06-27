@@ -36,4 +36,6 @@ def is_it_good(comment: str):
     return to_return
 
 
-gr.Interface(fn=is_it_good, inputs=["text"], outputs=["textbox"]).launch()
+gr.Interface(
+    fn=is_it_good, inputs=["text"], outputs=["textbox"], server_port=7860
+).launch()
