@@ -1,9 +1,12 @@
+import torch.nn as nn
+
+
 class NCF(nn.Module):
     def __init__(self, n_users, n_items, n_factors=8):
         super().__init__()
-        self.user_embeddings = torch.nn.Embedding(n_users, n_factors)
-        self.item_embeddings = torch.nn.Embedding(n_items, n_factors)
-        self.predictor = torch.nn.Sequential(
+        self.user_embeddings = nn.Embedding(n_users, n_factors)
+        self.item_embeddings = nn.Embedding(n_items, n_factors)
+        self.predictor = nn.Sequential(
             nn.Linear(in_features=n_factors * 2, out_features=64),
             nn.Linear(in_features=64, out_features=32),
             nn.Linear(in_features=32, out_features=1),
