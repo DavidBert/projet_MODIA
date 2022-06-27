@@ -37,5 +37,11 @@ def is_it_good(comment: str):
 
 
 gr.Interface(
-    fn=is_it_good, inputs=["text"], outputs=["textbox"], server_port=7860
-).launch()
+    fn=is_it_good,
+    inputs=["text"],
+    outputs=["textbox"],
+    server_port=7860,
+    server_name="0.0.0.0",
+).launch(
+    server_port=7860, server_name="0.0.0.0"
+)  # share=true
