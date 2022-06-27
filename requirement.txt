@@ -1,0 +1,5 @@
+gradio
+ntlk
+sklearn
+tensorflow
+pytorch

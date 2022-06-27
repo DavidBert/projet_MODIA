@@ -1,6 +1,23 @@
 import torch.nn as nn
 import torch
+from torch.utils.data import Dataset
 
+class Ratings_Datset(Dataset):
+    def __init__(self, df, user2id, item2id):
+        self.df = df.reset_index()
+        self.user2id = user2id
+        self.item2id = item2id
+
+    def __len__(self):
+        return len(self.df)
+  
+    def __getitem__(self, idx):
+        user = self.user2id[self.df['user_id'][idx]]
+        user = torch.tensor(user, dtype=torch.long)
+        item = self.item2id[self.df['recipe_id'][idx]]
+        item = torch.tensor(item, dtype=torch.long)
+        rating = torch.tensor(self.df['rating'][idx], dtype=torch.float)
+        return user, item, rating
 
 class NCF(nn.Module):
     def __init__(self, n_users, n_items, n_factors=8):
