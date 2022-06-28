@@ -1,5 +1,7 @@
 # Commande pour tester le projet
-##Prérequis
+
+## Prérequi
+
 Procédure effectuer sur ubuntu 20.04
 Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
 Pour installer python 3.8  
@@ -7,7 +9,7 @@ Pour installer python 3.8
 sudo apt install python3.8
 ```
 
-##On your local machine
+## On your local machine
 Pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
 ```console
 python main.py test_script.csv
@@ -20,7 +22,7 @@ Pour changer le model sklearn il est possible de modifier model_name dans recomm
 si l'extension [remote container](https://code.visualstudio.com/docs/remote/containers) et [vs code](https://code.visualstudio.com/) sont installés
 vous pouvez utiliser vs code pour rentrer dans le container et faire tourner les fichiers. Vous aurez aussi besoin des extensions [notebook](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) et [python](https://code.visualstudio.com/docs/languages/python) en remote pour executer les notebooks et les fichiers.py
 
-##Docker container
+## Docker container
 Pour lancer gradio et tout l'environnement sous docker, se placer dans le répertoire du projet :
 ```console
 source deployment.sh
