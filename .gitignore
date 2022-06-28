@@ -9,4 +9,4 @@ word2vec.model.wv.vectors.npy
 word2vec.model
 word2vec.model.syn1neg.npy
 interactions_test.csv
-interactions_test.csv.zip
+interactions_train.csv.zip
