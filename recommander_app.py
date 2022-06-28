@@ -1,5 +1,4 @@
 import gradio as gr
-from tensorflow.keras.models import load_model
 from nltk import word_tokenize          
 
 import pickle
@@ -26,13 +25,14 @@ class StemTokenizer:
         return [self.stemmer.stem(t) for t in word_tokenize(doc) if t not in self.ignore_tokens]
 
 def make_pred_from_text(text):
-    model = load_model('model_prediction_review.h5')
+    with open('model.pkl', 'rb') as file:
+        model = pickle.load(file)
     with open('tfidf.pkl', 'rb') as file:
         tfidf = pickle.load(file)
     if type(text) == str:
         text = np.array([text])
     tfidf_data = tfidf.transform(text).toarray()
-    pred = model.predict(tfidf_data)
+    pred = model.predict_proba(tfidf_data)
     if pred[0][1] > 0.5:
         return 'Positive, confidence (%.2f)' % pred[0][1]
     else:
