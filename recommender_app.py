@@ -52,13 +52,24 @@ def cleaning(voca):
         unicodedata.normalize("NFD", sw).encode("ascii", "ignore").decode("utf-8")
         for sw in stop_words
     ]
+    stopwords_to_keep = [
+        "no",
+        "nor",
+        "t",
+        "again",
+        "but",
+        "not",
+        "or",
+        "why",
+        "off",
+        "against",
+        "few",
+    ]
+    stopwords = [w for w in stopwords if w not in stopwords_to_keep]
 
-    tokens = [
-        w for w in cleaned_voc.split(" ") if (len(w) > 2) and (w not in stopwords)
-    ]
-    removed_words = [
-        w for w in cleaned_voc.split(" ") if (len(w) < 2) or (w in stopwords)
-    ]
+    # creation of tokens and removing the english stop word & words with less than 2 letters
+    tokens = [w for w in cleaned_voc.split(" ") if w != "" and (w not in stopwords)]
+    # removed_words = [w for w in cleaned_voc.split(" ") if (len(w)<2) or (w in stopwords)]
 
     ## Stemming function to get roots of words (racines des mots)
     stemmer = nltk.stem.SnowballStemmer("english")
@@ -74,13 +85,13 @@ def is_it_good(comment: str):
         model_name[-3:] == "pkl"
     ):  # on peut modifier le nom afin de changer de model !!attention cela modifiera aussi le model pour le dockerfile en cas de dockerfile!!!
         model = pickle.load(open(model_name, "rb"))
-    model = Word2Vec.load("word2vec.model")
 
     comment = cleaning(comment)
     comment = [" ".join(comment)]
     if model_name == "reg_log.pkl":
-        comment = set_features(comment, model.vector_size, model)
-
+        model_vec = Word2Vec.load("word2vec.model")
+        comment = [comment[0].split(" ")]
+        comment = set_features(comment, 500, model_vec.wv)
     sentiment = model.predict(comment)
     if sentiment == 1:
         to_return = f"positive comment!"
@@ -89,11 +100,13 @@ def is_it_good(comment: str):
     return to_return
 
 
+port = 7860
+# answer = input("do you want to change server_port? (currently 7860) y or n ?")
+# if answer in ["yes", "y", "Yes", "Y", "oui", "Oui", "O", "o", "YES", "OUI"]:
+#     port = int(input("please enter the port number: "))
 is_it_good("I love this recipe")
 gr.Interface(
     fn=is_it_good,
     inputs=["text"],
     outputs=["textbox"],
-    server_port=7860,
-    server_name="0.0.0.0",
-).launch(server_port=7860, server_name="0.0.0.0")
+).launch(server_port=port, server_name="0.0.0.0")
