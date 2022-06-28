@@ -1,3 +1,6 @@
+# Atelier de l'IA
+## Julien Salvador, Paul Brunet, Albin Cintas, Baptiste Aussel
+
 # Commande pour tester le projet
 
 ## Prérequis
