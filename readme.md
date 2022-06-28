@@ -1,10 +1,22 @@
 # Projet MODIA 2022
 
+*Ababacar Camara* - ababacar.camara@etu.enseeiht.fr
+
+*Sébastien Grand* - sebastien.grand@etu.enseeiht.fr
+
+*Clément Targe* - clement.targe@etu.enseeiht.fr
+
+*Quentin Thuet* - quentin.thuet@etu.enseeiht.fr
+
+Commandes pour run le projet : **TODO**
+
+
+## Consignes:
+
 Dans ce projet, vous allez travailler sur des données<sup>[1](#myfootnote1)</sup>issues du site [Food.com](https://www.food.com/), un célèbre site de recettes de cuisine.   
 ![](img/food.png)
 Les données, disponibles [ici](https://drive.google.com/drive/folders/18JyoxTIrIH2s2wG6HtxGiKsdFtGSfUWm?usp=sharing), contiennent des informations sur des recettes de cuisines ainsi que des interactions de plusieurs utilisateurs avec les recettes.   
 
-## Consignes:
 Les parties 1, 2 et 3 sont à réaliser dans un même notebook.
 ### Partie 1: Recommandations simples:
 Dans __un notebook__
