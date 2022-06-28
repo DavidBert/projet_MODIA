@@ -23,9 +23,10 @@ Pour changer le model sklearn il est possible de modifier model_name dans recomm
 
 
 ## Docker container
-Pour lancer gradio et tout l'environnement sous docker, se placer dans le répertoire du projet :
 Si l'extension [remote container](https://code.visualstudio.com/docs/remote/containers) et [vs code](https://code.visualstudio.com/) sont installés
 vous pouvez utiliser vs code pour rentrer dans le container et faire tourner les fichiers. Vous aurez aussi besoin des extensions [notebook](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) et [python](https://code.visualstudio.com/docs/languages/python) en remote pour executer les notebooks et les fichiers.py
+Pour lancer gradio et tout l'environnement sous docker, se placer dans le répertoire du projet :
+
 ```console
 source deployment.sh
 ```
