@@ -2,12 +2,13 @@
 
 ## Prérequis
 
-Procédure effectuer sur ubuntu 20.04
+Procédure effectué suous ubuntu 20.04
 Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
 Pour installer python 3.8  
 ```console
 sudo apt install python3.8
 ```
+Les librairies python nécéssaires sont disponible dans le fichier requirement.txt
 
 ## On your local machine
 Pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
