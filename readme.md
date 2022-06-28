@@ -1,15 +1,21 @@
 # Commande pour tester le projet
-pour lancer gradio, se placer dans le répertoire du projet :
+Procédure effectuer sur ubuntu 20.04
+Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
+Pour installer python 3.8 
+```console
+sudo apt install python3.8
+```
+Pour lancer gradio, se placer dans le répertoire du projet :
 ```console
 source deployment.sh
 ```
-pour rentrer dans le container
+Pour rentrer dans le container
 ```console
 export GRADIO_DOCKER_ID=$(sudo docker ps -aqf "ancestor=test_reco")
 sudo docker exec -it $GRADIO_DOCKER_ID /bin/bash
 ```
 
-pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
+Pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
 ```console
 python main.py test_script.csv
 ```
