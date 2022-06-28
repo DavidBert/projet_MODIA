@@ -7,9 +7,15 @@
 
 Procédure effectué suous ubuntu 20.04
 Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
-Pour installer python 3.8  
+Pour vérifier l'insatallation de python
 ```console
-sudo apt install python3.8
+python --version
+sudo docker --version
+```
+Pour installer python 3.7
+
+```console
+sudo apt install python3.7.7
 ```
 Les librairies python nécéssaires sont disponibles dans le fichier requirement.txt
 
