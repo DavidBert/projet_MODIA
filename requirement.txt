@@ -7,5 +7,7 @@ pandas
 numpy
 seaborn
 gdown
-unicodedata
-re
+pypi
+unicodedata2
+regex
+torch
