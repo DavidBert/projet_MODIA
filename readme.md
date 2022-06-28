@@ -1,6 +1,6 @@
 # Commande pour tester le projet
 
-## Prérequi
+## Prérequis
 
 Procédure effectuer sur ubuntu 20.04
 Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
