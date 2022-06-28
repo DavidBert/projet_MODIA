@@ -8,7 +8,7 @@ Pour installer python 3.8
 ```console
 sudo apt install python3.8
 ```
-Les librairies python nécéssaires sont disponible dans le fichier requirement.txt
+Les librairies python nécéssaires sont disponibles dans le fichier requirement.txt
 
 ## On your local machine
 Pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
@@ -19,7 +19,9 @@ Pour lancer gradio
 ```console
 python recommender_app.py
 ```
-Pour changer le model sklearn il est possible de modifier model_name dans recommender_app.py afin de charger d'autre réseau !!!attention cela modifiera aussi le model pour le dockerfile en cas de création d'un containeur!!!
+Pour changer le model sklearn il est possible de modifier model_name dans recommender_app.py afin de charger d'autre réseau sous fichier pickle 
+
+!!!attention cela modifiera aussi le model pour le dockerfile en cas de création d'un containeur!!!
 
 
 ## Docker container
