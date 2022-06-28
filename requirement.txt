@@ -1,5 +1,14 @@
 gradio
-ntlk
+nltk
 sklearn
 tensorflow
-pytorch
+ipykernel
+pandas
+numpy
+seaborn
+gdown
+pypi
+unicodedata2
+regex
+torch
+gensim
