@@ -2,3 +2,10 @@ gradio
 nltk
 sklearn
 tensorflow
+ipykernel
+pandas
+numpy
+seaborn
+gdown
+unicodedata
+re
