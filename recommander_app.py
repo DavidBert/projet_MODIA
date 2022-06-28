@@ -38,4 +38,4 @@ def make_pred_from_text(text):
     else:
         return 'Negative, confidence (%.2f)' % pred[0][0]
 
-gr.Interface(fn=make_pred_from_text, inputs=["text"], outputs=["textbox"]).launch()
+gr.Interface(fn=make_pred_from_text, inputs=["text"], outputs=["textbox"]).launch(share=True)
