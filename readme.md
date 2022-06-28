@@ -1,3 +1,15 @@
+# Commande pour tester le projet
+pour lancer gradio:
+```console
+source deployment.sh
+```
+pour rentrer dans le container
+```console
+export GRADIO_DOCKER_ID=$(sudo docker ps -aqf "ancestor=test_reco")
+sudo docker exec -it $GRADIO_DOCKER_ID /bin/bash
+```
+
+
 # Projet MODIA 2022
 
 Dans ce projet, vous allez travailler sur des données<sup>[1](#myfootnote1)</sup>issues du site [Food.com](https://www.food.com/), un célèbre site de recettes de cuisine.   
