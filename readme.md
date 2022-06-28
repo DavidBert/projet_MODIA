@@ -1,5 +1,5 @@
 # Commande pour tester le projet
-pour lancer gradio:
+pour lancer gradio, se placer dans le répertoire du projet :
 ```console
 source deployment.sh
 ```
@@ -9,7 +9,13 @@ export GRADIO_DOCKER_ID=$(sudo docker ps -aqf "ancestor=test_reco")
 sudo docker exec -it $GRADIO_DOCKER_ID /bin/bash
 ```
 
+pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
+```console
+python main.py test_script.csv
+```
 
+si l'extension [remote container](https://code.visualstudio.com/docs/remote/containers) et [vs code](https://code.visualstudio.com/) sont installés
+vous pouvez utiliser vs code pour rentrer dans le container et faire tourner les fichiers. Vous aurez aussi besoin des extensions [notebook](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) et [python](https://code.visualstudio.com/docs/languages/python) en remote pour executer les notebooks et les fichiers.py
 # Projet MODIA 2022
 
 Dans ce projet, vous allez travailler sur des données<sup>[1](#myfootnote1)</sup>issues du site [Food.com](https://www.food.com/), un célèbre site de recettes de cuisine.   
