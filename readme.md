@@ -21,10 +21,11 @@ Au cours de ce projet, nous avons développé différents outils permettent de r
 Pour run le projet via Docker (attention, vous devez disposer de droits administrateurs sur votre ordinateur, par exemple sur linux, appelez ```sudo``` au début de chaque commande):
 * Installer l'application Docker : https://docs.docker.com/engine/install/
 * Construction de l'image : ```docker build -t food_recipes_image -f [chemin vers le fichier Dockerfile] [chemin vers le dossier de contexte (là où sera, entre autres, stockée l'image construite)]```
-* Création et lancement du conteneur : ```docker run -it --name food_recipes_container -v ~/[chemin vers le dossier food_recipes_prediction]:/workspace/food_recipes_prediction food_recipes_image```
+* Création et lancement du conteneur : ```docker run -it -p 8888:8888 --name food_recipes_container -v ~/[chemin vers le dossier food_recipes_prediction]:/workspace/food_recipes_prediction food_recipes_image```
 * Une fois dans le conteneur, se déplacer dans le dossier qui nous intéresse : ```cd food_recipes_prediction```
+* Lancement du notebook ```food_recipes_prediction.ipynb``` depuis le conteneur : ```jupyter notebook --ip 0.0.0.0 --no-browser --allow-root```
 * Lancement de ```recommander_app.py``` depuis le conteneur : ```python recommander_app.py``` puis cliquer sur l'URL public (https://?????.gradio.app)
-* Lancement du script de Neural Collaborative Filtering : ```python main.py --weights_path weights.pth --test_path test_script.csv```
+* Lancement du script de Neural Collaborative Filtering depuis le conteneur : ```python main.py --weights_path weights.pth --test_path test_script.csv```
 * Quitter le conteneur : ```exit```
 
 
