@@ -15,8 +15,7 @@ Au cours de ce projet, nous avons développé différents outils permettent de r
 * Un fichier ```model.py``` contenant le modèle utilisé dans ```main.py```
 * Un fichier ```Dockerfile``` permettant d'exécuter les scripts depuis n'importe quelle machine via Docker, la procédure pour l'utiliser est décrite ci-dessous.
 * Un fichier ```environment.yml``` permettant de mettre en place un environnement conda pour exécuter le notebook et les scripts : ```conda env create --name food_recipes_env --file environment.yml```
-
-**Attention !** Pour lancer les scripts, il faut d'abord lancer le notebook afin de générer plusieurs fichiers de données.
+* Plusieurs fichiers contenant des données et des variables
 
 Pour run le projet via Docker (attention, vous devez disposer de droits administrateurs sur votre ordinateur, par exemple sur linux, appelez ```sudo``` au début de chaque commande):
 * Installer l'application Docker : https://docs.docker.com/engine/install/
