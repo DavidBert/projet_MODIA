@@ -33,7 +33,7 @@ Pour lancer gradio
 python recommender_app.py
 ```
 Pour changer le model sklearn il est possible de modifier model_name dans recommender_app.py afin de charger d'autre réseau sous fichier pickle 
-
+Il faut toutefois executer le notebook Sentiment_analysis afin de créer le model de la régression logistique et de l'enregistrer, une fois cela fais on peut le récupérer
 !!! Attention cela modifiera aussi le model pour le dockerfile en cas de création d'une image !!!
 
 
@@ -59,7 +59,8 @@ Pour executer le Neural Collaborative Filtering (se placer dans le répertoire d
 python main.py test_script.csv
 ```
 
-En modifiant , via [vs code](https://code.visualstudio.com/) et son extension, le server_port vous pouvez relancer un gradio avec un autre model sur un autre port
+En modifiant , via [vs code](https://code.visualstudio.com/) et son extension, le server_port vous pouvez relancer un gradio avec un autre model sur un autre port.
+Il faut toutefois executer le notebook Sentiment_analysis afin de créer le model de la régression logistique et de l'enregistrer sous forme de fichier, une fois cela fais on peut le récupérer
 ```console
 python recommender_app.py
 ```
