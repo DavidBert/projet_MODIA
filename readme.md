@@ -8,7 +8,24 @@
 
 *Quentin Thuet* - quentin.thuet@etu.enseeiht.fr
 
-Commandes pour run le projet : **TODO**
+Au cours de ce projet, nous avons développé différents outils permettent de réaliser des recommandations et des prédictions sur les données d'un site de recettes de cuisine. Vous trouverez dans ce dépôt : 
+* Un notebook ```food_recipes_prediction.ipynb```contenant nos développements 
+* Un script ```recommander_app.py``` permettant de lancer une interface graphique d'analyse de sentiments dans un commentaire de recette
+* Un script ```main.py``` permettant de lancer des prédictions de notes pour les utilisateurs et les recettes contenus dans ```test_script.csv```
+* Un fichier ```model.py``` contenant le modèle utilisé dans ```main.py```
+* Un fichier ```Dockerfile``` permettant d'exécuter les scripts depuis n'importe quelle machine via Docker, la procédure pour l'utiliser est décrite ci-dessous.
+* Un fichier ```environment.yml``` permettant de mettre en place un environnement conda pour exécuter le notebook et les scripts : ```conda env create --name food_recipes_env --file environment.yml```
+
+**Attention !** Pour lancer les scripts, il faut d'abord lancer le notebook afin de générer plusieurs fichiers de données.
+
+Pour run le projet via Docker (attention, vous devez disposer de droits administrateurs sur votre ordinateur, par exemple sur linux, appelez ```sudo``` au début de chaque commande):
+* Installer l'application Docker : https://docs.docker.com/engine/install/
+* Construction de l'image : ```docker build -t food_recipes_image -f [chemin vers le fichier Dockerfile] [chemin vers le dossier de contexte (là où sera, entre autres, stockée l'image construite)]```
+* Création et lancement du conteneur : ```docker run -it --name food_recipes_container -v ~/[chemin vers le dossier food_recipes_prediction]:/workspace/food_recipes_prediction food_recipes_image```
+* Une fois dans le conteneur, se déplacer dans le dossier qui nous intéresse : ```cd food_recipes_prediction```
+* Lancement de ```recommander_app.py``` depuis le conteneur : ```python recommander_app.py``` puis cliquer sur l'URL public (https://?????.gradio.app)
+* Lancement du script de Neural Collaborative Filtering : ```python main.py --weights_path weights.pth --test_path test_script.csv```
+* Quitter le conteneur : ```exit```
 
 
 ## Consignes:
