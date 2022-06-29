@@ -45,6 +45,9 @@ Pour lancer gradio et tout l'environnement sous docker, se placer dans le réper
 ```console
 source deployment.sh
 ```
+
+L'application gradio sur un modele de randomForest sera directement disponible en localhost:7860
+
 Pour rentrer dans le container
 ```console
 export GRADIO_DOCKER_ID=$(sudo docker ps -aqf "ancestor=container_gradio")
@@ -56,10 +59,11 @@ Pour executer le Neural Collaborative Filtering (se placer dans le répertoire d
 python main.py test_script.csv
 ```
 
-En modifiant le server_port vous pouvez relancer un gradio avec un autre model sur un autre port
+En modifiant , via [vs code](https://code.visualstudio.com/) et son extension, le server_port vous pouvez relancer un gradio avec un autre model sur un autre port
 ```console
 python recommender_app.py
 ```
+Il est aussi possible d'éxecuter le fichier depuis vs code
 
 # Projet MODIA 2022
 
