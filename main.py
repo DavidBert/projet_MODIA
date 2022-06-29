@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 def main(test_path):
     test_path = test_path[1] 
     
-    dict_weight = torch.load('weight.pth', map_location=torch.device('cpu'))
+    dict_weight, dict_item, dict_user = torch.load('weight.pth', map_location=torch.device('cpu'))
     
     to_predict = pd.read_csv(test_path)
     
@@ -18,8 +18,8 @@ def main(test_path):
     model = NCF(n_user, n_items)
     model.load_state_dict(dict_weight)
 
-    user_list = to_predict.user_id.unique()
-    item_list = to_predict.recipe_id.unique()
+    user_list = dict_user['user_list']
+    item_list = dict_item['item_list']
     user2id = {w: i for i, w in enumerate(user_list)}
     item2id = {w: i for i, w in enumerate(item_list)}    
     
