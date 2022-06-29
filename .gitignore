@@ -1,0 +1,16 @@
+.vscode
+model.cpython-37.pyc
+__pycache__
+classifier_RF.pkl
+RAW_interactions.csv
+RAW_interactions.csv.zip
+word2vec.model.trainables.syn1neg.npy
+word2vec.model.wv.vectors.npy
+word2vec.model
+word2vec.model.syn1neg.npy
+interactions_test.csv
+interactions_train.csv.zip
+RAW_recipes.csv.zipp0ielnvntmp
+interactions_train.csv
+RAW_recipes.csv
+RAW_recipes.csv.zip

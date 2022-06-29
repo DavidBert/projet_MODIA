@@ -1,0 +1,15 @@
+gradio
+nltk
+sklearn
+tensorflow
+ipykernel
+pandas
+numpy
+seaborn
+gdown
+pypi
+unicodedata2
+regex
+torch
+gensim
+lime

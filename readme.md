@@ -1,3 +1,71 @@
+# Atelier de l'IA
+
+Julien Salvador, Paul Brunet, Albin Cintas, Baptiste Aussel
+
+# Commande pour tester le projet
+
+## Prérequis
+Cloner le projet : 
+```console
+git clone https://github.com/Walterseal/projet_MODIA_gr4.git
+```
+Procédure effectuée sous ubuntu 20.04
+Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
+Pour vérifier l'installation de python
+```console
+python --version
+sudo docker --version
+```
+Pour installer python 3.7
+
+```console
+sudo apt install python3.7.7
+```
+Les librairies python nécéssaires sont disponibles dans le fichier requirement.txt
+
+## On your local machine
+Pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
+```console
+python main.py test_script.csv
+```
+Pour lancer gradio
+```console
+python recommender_app.py
+```
+Pour changer le model sklearn il est possible de modifier model_name dans recommender_app.py afin de charger d'autre réseau sous fichier pickle 
+Il faut toutefois executer le notebook Sentiment_analysis afin de créer le model de la régression logistique et de l'enregistrer, une fois cela fais on peut le récupérer
+!!! Attention cela modifiera aussi le model pour le dockerfile en cas de création d'une image !!!
+
+
+## Docker container
+Si [vs code](https://code.visualstudio.com/) et l'extension [remote container](https://code.visualstudio.com/docs/remote/containers) sont installés
+vous pouvez utiliser vs code pour rentrer dans le container et faire tourner les fichiers. 
+Pour lancer gradio et tout l'environnement sous docker, se placer dans le répertoire du projet :
+
+```console
+source deployment.sh
+```
+
+L'application gradio sur un modele de randomForest sera directement disponible en localhost:7860
+
+Pour rentrer dans le container
+```console
+export GRADIO_DOCKER_ID=$(sudo docker ps -aqf "ancestor=container_gradio")
+sudo docker exec -it $GRADIO_DOCKER_ID /bin/bash
+```
+Vous aurez aussi besoin des extensions [notebook](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) et [python](https://code.visualstudio.com/docs/languages/python) en remote pour executer les notebooks et les fichiers.py
+Pour executer le Neural Collaborative Filtering (se placer dans le répertoire du projet)
+```console
+python main.py test_script.csv
+```
+
+En modifiant , via [vs code](https://code.visualstudio.com/) et son extension, le server_port vous pouvez relancer un gradio avec un autre model sur un autre port.
+Il faut toutefois executer le notebook Sentiment_analysis afin de créer le model de la régression logistique et de l'enregistrer sous forme de fichier, une fois cela fais on peut le récupérer
+```console
+python recommender_app.py
+```
+Il est aussi possible d'éxecuter le fichier depuis vs code
+
 # Projet MODIA 2022
 
 Dans ce projet, vous allez travailler sur des données<sup>[1](#myfootnote1)</sup>issues du site [Food.com](https://www.food.com/), un célèbre site de recettes de cuisine.   
