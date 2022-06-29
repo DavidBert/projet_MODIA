@@ -79,8 +79,8 @@ def cleaning(voca):
 
 
 def is_it_good(comment: str):
-    model_name = "reg_log.pkl"
-    # model_name = "model_randomforest.pkl"
+    # model_name = "reg_log.pkl"
+    model_name = "model_randomforest.pkl"
     if (
         model_name[-3:] == "pkl"
     ):  # on peut modifier le nom afin de changer de model !!attention cela modifiera aussi le model pour le dockerfile en cas de dockerfile!!!
