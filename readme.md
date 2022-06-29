@@ -5,9 +5,9 @@
 
 ## Prérequis
 
-Procédure effectué sous ubuntu 20.04
+Procédure effectuée sous ubuntu 20.04
 Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
-Pour vérifier l'insatallation de python
+Pour vérifier l'installation de python
 ```console
 python --version
 sudo docker --version
@@ -28,9 +28,9 @@ Pour lancer gradio
 ```console
 python recommender_app.py
 ```
-Pour changer le model sklearn il est possible de modifier model_name dans recommender_app.py afin de charger d'git pautre réseau sous fichier pickle 
+Pour changer le model sklearn il est possible de modifier model_name dans recommender_app.py afin de charger d'autre réseau sous fichier pickle 
 
-!!!attention cela modifiera aussi le model pour le dockerfile en cas de création d'un containeur!!!
+!!! Attention cela modifiera aussi le model pour le dockerfile en cas de création d'une image !!!
 
 
 ## Docker container
