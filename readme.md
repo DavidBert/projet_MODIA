@@ -5,7 +5,10 @@ Julien Salvador, Paul Brunet, Albin Cintas, Baptiste Aussel
 # Commande pour tester le projet
 
 ## Prérequis
-
+Cloner le projet : 
+```console
+git clone https://github.com/Walterseal/projet_MODIA_gr4.git
+```
 Procédure effectuée sous ubuntu 20.04
 Pour faire tourner ce projet vous devez avoir [docker](https://docs.docker.com/engine/install/ubuntu/) et  python d'installés sur votre machine 
 Pour vérifier l'installation de python
